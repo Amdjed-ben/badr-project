@@ -1,7 +1,7 @@
 import os
 import django
 
-os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'your_project_name.settings') # استبدل اسم مشروعك هنا
+os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'backend.settings') # استبدل اسم مشروعك هنا
 django.setup()
 
 from django.contrib.auth.models import User
