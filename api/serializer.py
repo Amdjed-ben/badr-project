@@ -8,16 +8,21 @@ class Clients_Serializer(serializers.ModelSerializer):
         fields = "__all__"
 
 class Project_Serializer(serializers.ModelSerializer):
+    image = serializers.SerializerMethodField()
     class Meta:
         model = Project
         fields = ["id",'title','description',"categore",'password','image']
         extra_kwargs = {
             'password': {'write_only': True}
         }
-        def get_photo_url(self,obj):
-            req = self.context.get('request')
-            photo_url = obj.fingerprint.url
-            return req.build_absolute_url()
+        # def get_photo_url(self,obj):
+        #     req = self.context.get('request')
+        #     photo_url = obj.fingerprint.url
+        #     return req.build_absolute_url()
+    def get_image(self, obj):
+        if obj.image:
+            return obj.image.url
+        return None
 class Category_Serializer(serializers.ModelSerializer):
     class Meta:
         model = Categore
