@@ -16,6 +16,15 @@ from pathlib import Path
 import dj_database_url
 from dotenv import load_dotenv
 
+import socket
+
+# Force IPv4 resolution for Supabase/Render networking issues
+orig_getaddrinfo = socket.getaddrinfo
+def filtered_getaddrinfo(*args, **kwargs):
+    res = orig_getaddrinfo(*args, **kwargs)
+    return [r for r in res if r[0] == socket.AF_INET]
+
+socket.getaddrinfo = filtered_getaddrinfo
 load_dotenv()
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -112,6 +121,9 @@ WSGI_APPLICATION = 'backend.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/6.0/ref/settings/#databases
+
+import socket
+
 
 DATABASES = {
     'default': dj_database_url.config(
