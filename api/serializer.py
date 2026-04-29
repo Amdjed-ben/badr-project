@@ -15,10 +15,12 @@ class Project_Serializer(serializers.ModelSerializer):
         extra_kwargs = {
             'password': {'write_only': True}
         }
-        def get_photo_url(self,obj):
-            req = self.context.get('request')
-            photo_url = obj.fingerprint.url
-            return req.build_absolute_url()
+    def get_image(self, obj):
+        request = self.context.get('request')
+        if obj.image:
+            # بناء الرابط الكامل (مثال: http://127.0.0.1:8000/media/image.jpg)
+            return request.build_absolute_uri(obj.image.url)
+        return None
     # def get_image(self, obj):
     #     if obj.image:
     #         return obj.image.url

@@ -1,6 +1,6 @@
 from django.urls import path,re_path
 from . import views
-
+from ..backend import settings
 
 urlpatterns = [
     path('client/add/', views.add_client, name='add client' ),
@@ -9,3 +9,6 @@ urlpatterns = [
     path('projects/list3/',views.list_3projects, name='list 3 projects'),
     path('categories/',views.list_category, name='list categories')
 ]
+
+if settings.DEBUG:
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

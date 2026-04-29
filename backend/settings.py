@@ -168,6 +168,13 @@ STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 # settings.py
 
+# رابط الوصول للملفات عبر المتصفح
+MEDIA_URL = '/media/'
+
+# المسار الفيزيائي لتخزين الملفات على القرص الصلب
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+# settings.py
+
 
 DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
     
