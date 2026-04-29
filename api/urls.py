@@ -1,6 +1,6 @@
 from django.urls import path,re_path
 from . import views
-from ..backend import settings
+from django.conf import settings 
 
 urlpatterns = [
     path('client/add/', views.add_client, name='add client' ),
