@@ -1,7 +1,7 @@
 from django.urls import path,re_path
 from . import views
 from django.conf import settings 
-
+from django.conf.urls.static import static
 urlpatterns = [
     path('client/add/', views.add_client, name='add client' ),
     path('projects/auth/', views.authenticate_project , name='authenticate project' ),
