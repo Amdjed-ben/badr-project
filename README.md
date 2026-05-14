@@ -24,7 +24,7 @@ This repository hosts the **Backend API Service** for Project Badr. A robust, sc
 
 ---
 ### 0x04 // FRONTEND_SITE
-- [**Amdjed cyber security project**](amdjed-cybersecurity-project.netlify.app)
+- [**Amdjed cyber security project**](https://amdjed-cybersecurity-project.netlify.app/)
 
 ---
 ### 0x05 // SYSTEM_SETUP
