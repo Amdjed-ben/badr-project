@@ -23,8 +23,11 @@ This repository hosts the **Backend API Service** for Project Badr. A robust, sc
 - **Persistent Storage:** Integrated Cloudinary pipeline for media management.
 
 ---
+### 0x04 // FRONTEND_SITE
+- [**Amdjed cyber security project**](amdjed-cybersecurity-project.netlify.app)
 
-### 0x04 // SYSTEM_SETUP
+---
+### 0x05 // SYSTEM_SETUP
 ```bash
 # 1. Clone the service
 git clone [https://github.com/Amdjed-ben/Badr-Project-Backend](https://github.com/Amdjed-ben/Badr-Project-Backend)
